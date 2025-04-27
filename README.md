@@ -126,16 +126,16 @@ Features
   <img src="src/assets/Capture d'écran 2025-04-27 065613.png" alt="Image 1" />
 </div>
 <div align="center">
-  <img src="./assets/Capture d'écran 2025-04-27 065642.png" alt="Image 2" />
+  <img src="src/assets/Capture d'écran 2025-04-27 065642.png" alt="Image 2" />
 </div>
 <div align="center">
-  <img src="./assets/Capture d'écran 2025-04-27 065711.png" alt="Image 3" />
+  <img src="src/assets/Capture d'écran 2025-04-27 065711.png" alt="Image 3" />
 </div>
 <div align="center">
-  <img src="./assets/Capture d'écran 2025-04-27 065753.png" alt="Image 4" />
+  <img src="src/assets/Capture d'écran 2025-04-27 065753.png" alt="Image 4" />
 </div>
 <div align="center">
-  <img src="./assets/Capture d'écran 2025-04-27 065812.png" alt="Image 5" />
+  <img src="src/assets/Capture d'écran 2025-04-27 065812.png" alt="Image 5" />
 </div>
 
 
