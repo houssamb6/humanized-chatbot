@@ -28,16 +28,16 @@ app.secret_key = "your_secret_key"  # Secret key for session management
 def generate_title(text):
     input_ids = tokenizer(f'paraphraser: {text}', return_tensors="pt", padding="longest", truncation=True, max_length=64).input_ids.to(device)
     outputs = model.generate(
-    input_ids,
-    do_sample=False,  # Disable sampling
-    num_beams=4,
-    num_beam_groups=4,
-    num_return_sequences=4,
-    repetition_penalty=10.0,
-    diversity_penalty=3.0,
-    no_repeat_ngram_size=2,
-    max_length=64
-)
+        input_ids,
+        num_beams=4,
+        num_beam_groups=4,
+        num_return_sequences=4,
+        repetition_penalty=10.0,
+        diversity_penalty=3.0,
+        no_repeat_ngram_size=2,
+        temperature=0.8,
+        max_length=64
+    )
     return tokenizer.batch_decode(outputs, skip_special_tokens=True)
 
 # More precise system-level prompt for human-like responses
