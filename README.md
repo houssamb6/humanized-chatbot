@@ -1,48 +1,138 @@
-📝 Humanizing LLM Outputs
-Description
-This project aims to build a model capable of rephrasing the output of a Large Language Model (LLM) to make it sound more "human-like".
+# 📝 Humanizing LLM Outputs
 
-In many cases, even powerful LLMs generate text that feels slightly robotic, overly formal, or repetitive. Our goal is to develop an AI system that takes LLM-generated text as input and rewrites it in a way that sounds more natural, fluent, and conversational — just like a real human would write it.
+---
 
-Project Objectives
-🎯 Reformulate LLM outputs to make them:
+## 📖 Project Overview
 
-More natural
+This project builds a model capable of **rephrasing the output of a Large Language Model (LLM)** to make it sound more **natural, fluent, and human-like**.
 
-Clearer and easier to read
+In many cases, even powerful LLMs generate text that feels robotic or overly formal.  
+Our goal is to **develop an AI system that rewrites LLM outputs** to sound more **approachable, conversational, and real** — like a text written by a human.
 
-Friendly and engaging
+---
 
-🧠 Use two models:
+## 🎯 Objectives
 
-A base LLM (Llama 2 through Ollama) to generate initial responses.
+- Reformulate LLM outputs to be:
+  - Natural and easy to read
+  - Friendly and engaging
+  - Clear and concise
+- Combine the power of:
+  - A **base LLM** (Llama 2 via [Ollama](https://ollama.com/))
+  - A **paraphrasing model** ([Ateeqq/Text-Rewriter-Paraphraser](https://huggingface.co/Ateeqq/Text-Rewriter-Paraphraser))
+- Serve the humanized responses through a simple **Flask API**.
 
-A paraphrasing model (Ateeqq/Text-Rewriter-Paraphraser) to rework the LLM outputs.
+---
 
-🌐 Expose the system through a simple Flask API to interact with it easily from a frontend or other applications.
+## ⚙️ How It Works
 
-How It Works
-The user sends a question via an API endpoint (/ask).
+1. **User** sends a question to the API (`/ask` endpoint).
+2. **Backend** processes it:
+   - Sends the conversation context to the LLM via **LangChain**.
+   - Receives a first draft response.
+   - Passes the response through the **Text Rewriter** model to paraphrase it.
+3. **Final Output**: A smooth, natural-sounding answer is returned.
 
-The backend (Flask server):
+---
 
-Sends the conversation context to the LLM using LangChain.
+## 🛠️ Technologies Used
 
-Receives a first version of the answer.
+| Technology | Role |
+| :--- | :--- |
+| Python | Programming Language |
+| Flask | Backend Web Framework |
+| LangChain | Prompt Management & LLM Chaining |
+| Hugging Face Transformers | Paraphraser Model |
+| Ollama | Local LLM Deployment (Llama 2) |
+| PyTorch | Deep Learning Library (for paraphraser) |
 
-Paraphrases this answer using a specialized text rewriter model (based on Transformer architecture).
+---
 
-The final humanized response is sent back to the user.
+## 🚀 Getting Started
 
-Stack & Technologies
-🐍 Python
+### Prerequisites
+- Python 3.8+
+- Ollama installed and running locally (with the Llama2 model pulled)
+- GPU (optional but recommended for paraphrasing speed)
 
-🛜 Flask (Backend API)
+### Installation Steps
 
-🔥 LangChain (to manage prompts and interaction with LLM)
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/humanizing-llm.git
+   cd humanizing-llm
+   ```
 
-🤗 Hugging Face Transformers (for the paraphraser model)
+2. **Install the required packages:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-🚀 Ollama (to run Llama 2 locally)
+3. **Run the Flask server:**
+   ```bash
+   python app.py
+   ```
 
-🎯 Session management (for maintaining conversation history)
+4. **Access the API at:**
+   ```
+   http://localhost:5000
+   ```
+
+---
+
+## 📡 API Usage
+
+### Endpoint
+
+- **POST** `/ask`
+
+### Request Body Example
+
+```json
+{
+  "question": "What is the importance of AI?",
+  "conversation_history": [
+    {"role": "user", "content": "Hello!"},
+    {"role": "bot", "content": "Hi, how can I help you?"}
+  ]
+}
+```
+
+### Response Example
+
+```json
+{
+  "answer": "AI plays a crucial role in modern society by improving efficiency, decision-making, and driving innovation across various industries."
+}
+```
+
+---
+
+## 💡 Why This Project?
+
+In real-world applications, **sounding human** is critical for AI systems like:
+- Virtual assistants
+- Chatbots
+- Content generation tools
+
+This project aims to **bridge the gap** between machine output and real human communication — making AI more natural, relatable, and effective.
+
+---
+
+## 📈 Future Improvements
+
+- Fine-tune the paraphraser model for even better results
+- Personalize responses based on user profiles
+- Add support for multiple LLMs (Llama 3, Mistral, etc.)
+- Build a frontend for easy testing
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# 🌟 Let's make AI sound more human!
+
