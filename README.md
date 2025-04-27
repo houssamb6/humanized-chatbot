@@ -1,12 +1,48 @@
-# React + Vite
+📝 Humanizing LLM Outputs
+Description
+This project aims to build a model capable of rephrasing the output of a Large Language Model (LLM) to make it sound more "human-like".
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In many cases, even powerful LLMs generate text that feels slightly robotic, overly formal, or repetitive. Our goal is to develop an AI system that takes LLM-generated text as input and rewrites it in a way that sounds more natural, fluent, and conversational — just like a real human would write it.
 
-Currently, two official plugins are available:
+Project Objectives
+🎯 Reformulate LLM outputs to make them:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+More natural
 
-## Expanding the ESLint configuration
+Clearer and easier to read
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Friendly and engaging
+
+🧠 Use two models:
+
+A base LLM (Llama 2 through Ollama) to generate initial responses.
+
+A paraphrasing model (Ateeqq/Text-Rewriter-Paraphraser) to rework the LLM outputs.
+
+🌐 Expose the system through a simple Flask API to interact with it easily from a frontend or other applications.
+
+How It Works
+The user sends a question via an API endpoint (/ask).
+
+The backend (Flask server):
+
+Sends the conversation context to the LLM using LangChain.
+
+Receives a first version of the answer.
+
+Paraphrases this answer using a specialized text rewriter model (based on Transformer architecture).
+
+The final humanized response is sent back to the user.
+
+Stack & Technologies
+🐍 Python
+
+🛜 Flask (Backend API)
+
+🔥 LangChain (to manage prompts and interaction with LLM)
+
+🤗 Hugging Face Transformers (for the paraphraser model)
+
+🚀 Ollama (to run Llama 2 locally)
+
+🎯 Session management (for maintaining conversation history)
