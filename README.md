@@ -124,13 +124,12 @@ This project aims to **bridge the gap** between machine output and real human co
 - Fine-tune the paraphraser model for even better results
 - Personalize responses based on user profiles
 - Add support for multiple LLMs (Llama 3, Mistral, etc.)
-- Build a frontend for easy testing
 
 ---
 
 ## 📝 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the *MIT License*.
 
 ---
 
