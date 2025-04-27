@@ -1,8 +1,8 @@
-# 📝 Humanizing LLM Outputs
+#  Humanizing LLM 
 
 ---
 
-## 📖 Project Overview
+##  Project Overview
 
 This project builds a model capable of **rephrasing the output of a Large Language Model (LLM)** to make it sound more **natural, fluent, and human-like**.
 
@@ -48,7 +48,7 @@ Our goal is to **develop an AI system that rewrites LLM outputs** to sound more 
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Python 3.8+
@@ -80,7 +80,7 @@ Our goal is to **develop an AI system that rewrites LLM outputs** to sound more 
 
 ---
 
-## 📡 API Usage
+##  API Usage
 
 ### Endpoint
 
@@ -108,7 +108,7 @@ Our goal is to **develop an AI system that rewrites LLM outputs** to sound more 
 
 ---
 
-## 💡 Why This Project?
+##  Why This Project?
 
 In real-world applications, **sounding human** is critical for AI systems like:
 - Virtual assistants
@@ -119,7 +119,7 @@ This project aims to **bridge the gap** between machine output and real human co
 
 ---
 
-## 📈 Future Improvements
+##  Future Improvements
 
 - Fine-tune the paraphraser model for even better results
 - Personalize responses based on user profiles
@@ -127,11 +127,6 @@ This project aims to **bridge the gap** between machine output and real human co
 
 ---
 
-## 📝 License
 
-This project is licensed under the *MIT License*.
-
----
-
-# 🌟 Let's make AI sound more human!
+# Let's make AI sound more human!
 
