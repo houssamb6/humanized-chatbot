@@ -123,7 +123,7 @@ Features
 - 
 ##  Demo
 <div align="center">
-  <img src="/assets/Capture d'écran 2025-04-27 065613.png" alt="Image 1" />
+  <img src="src/assets/Capture d'écran 2025-04-27 065613.png" alt="Image 1" />
 </div>
 <div align="center">
   <img src="./assets/Capture d'écran 2025-04-27 065642.png" alt="Image 2" />
