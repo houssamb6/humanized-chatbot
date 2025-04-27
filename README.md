@@ -123,7 +123,6 @@ Features
 - 
 ##  Demo
 
-*(Add screenshots or demo GIFs here)*
 
 ##  Why This Project?
 
