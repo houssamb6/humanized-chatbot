@@ -23,7 +23,12 @@ Our goal is to **develop an AI system that rewrites LLM outputs** to sound more 
 - Serve the humanized responses through a simple **Flask API**.
 
 ---
+##  Project Structure
 
+- **Backend** (`/backend`): Flask server running the Llama2 model (local API).
+- **Frontend** (`/frontend`): React Vite application for the user interface.
+
+---
 ## ⚙️ How It Works
 
 1. **User** sends a question to the API (`/ask` endpoint).
@@ -107,6 +112,18 @@ Our goal is to **develop an AI system that rewrites LLM outputs** to sound more 
 ```
 
 ---
+Features
+
+- Human-like chat interface
+- Online/offline backend status indicator
+- Mobile responsive design
+- Dark mode / Light mode compatible
+- Smooth interaction with local Llama2 backend
+- Simple memory management via Flask sessions
+- 
+##  Demo
+
+*(Add screenshots or demo GIFs here)*
 
 ##  Why This Project?
 
