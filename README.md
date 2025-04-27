@@ -1,12 +1,148 @@
-# React + Vite
+#  Humanizing LLM 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+##  Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project builds a model capable of **rephrasing the output of a Large Language Model (LLM)** to make it sound more **natural, fluent, and human-like**.
 
-## Expanding the ESLint configuration
+In many cases, even powerful LLMs generate text that feels robotic or overly formal.  
+Our goal is to **develop an AI system that rewrites LLM outputs** to sound more **approachable, conversational, and real** — like a text written by a human.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🎯 Objectives
+
+- Reformulate LLM outputs to be:
+  - Natural and easy to read
+  - Friendly and engaging
+  - Clear and concise
+- Combine the power of:
+  - A **base LLM** (Llama 2 via [Ollama](https://ollama.com/))
+  - A **paraphrasing model** ([Ateeqq/Text-Rewriter-Paraphraser](https://huggingface.co/Ateeqq/Text-Rewriter-Paraphraser))
+- Serve the humanized responses through a simple **Flask API**.
+
+---
+##  Project Structure
+
+- **Backend** (`/backend`): Flask server running the Llama2 model (local API).
+- **Frontend** (`/frontend`): React Vite application for the user interface.
+
+---
+## ⚙️ How It Works
+
+1. **User** sends a question to the API (`/ask` endpoint).
+2. **Backend** processes it:
+   - Sends the conversation context to the LLM via **LangChain**.
+   - Receives a first draft response.
+   - Passes the response through the **Text Rewriter** model to paraphrase it.
+3. **Final Output**: A smooth, natural-sounding answer is returned.
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Role |
+| :--- | :--- |
+| Python | Programming Language |
+| Flask | Backend Web Framework |
+| LangChain | Prompt Management & LLM Chaining |
+| Hugging Face Transformers | Paraphraser Model |
+| Ollama | Local LLM Deployment (Llama 2) |
+| PyTorch | Deep Learning Library (for paraphraser) |
+
+---
+
+##  Getting Started
+
+### Prerequisites
+- Python 3.8+
+- Ollama installed and running locally (with the Llama2 model pulled)
+- GPU (optional but recommended for paraphrasing speed)
+
+### Installation Steps
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/humanizing-llm.git
+   cd humanizing-llm
+   ```
+
+2. **Install the required packages:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the Flask server:**
+   ```bash
+   python app.py
+   ```
+
+4. **Access the API at:**
+   ```
+   http://localhost:5000
+   ```
+
+---
+
+##  API Usage
+
+### Endpoint
+
+- **POST** `/ask`
+
+### Request Body Example
+
+```json
+{
+  "question": "What is the importance of AI?",
+  "conversation_history": [
+    {"role": "user", "content": "Hello!"},
+    {"role": "bot", "content": "Hi, how can I help you?"}
+  ]
+}
+```
+
+### Response Example
+
+```json
+{
+  "answer": "AI plays a crucial role in modern society by improving efficiency, decision-making, and driving innovation across various industries."
+}
+```
+
+---
+Features
+
+- Human-like chat interface
+- Online/offline backend status indicator
+- Mobile responsive design
+- Dark mode / Light mode compatible
+- Smooth interaction with local Llama2 backend
+- Simple memory management via Flask sessions
+- 
+##  Demo
+
+
+##  Why This Project?
+
+In real-world applications, **sounding human** is critical for AI systems like:
+- Virtual assistants
+- Chatbots
+- Content generation tools
+
+This project aims to **bridge the gap** between machine output and real human communication — making AI more natural, relatable, and effective.
+
+---
+
+##  Future Improvements
+
+- Fine-tune the paraphraser model for even better results
+- Personalize responses based on user profiles
+- Add support for multiple LLMs (Llama 3, Mistral, etc.)
+
+---
+
+
+# Let's make AI sound more human!
+
